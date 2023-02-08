@@ -1,0 +1,36 @@
+<p>test2 works!</p>
+
+<button (click)="onButtuonClick()">click me</button>
+
+<p>count is :{{count}}</p>
+
+<input type="text" (keyup)="onKeyUp($event)">
+
+<h1>Two way databinding</h1>
+<!-- bannana in box sentax -->
+<input type="text" [(ngModel)]="firstName">
+<!-- change ditection -->
+{{firstName}}
+
+<form>
+    <table>
+        <tr>
+            <h4>Login Page</h4>
+        </tr>
+        <tr>
+            <td><label>User ID</label></td>
+            <td><input type="text" [(ngModel)]="userName" name="id.user" required>User Input : {{userName}}</td>
+        </tr>
+
+        <tr>
+            <td><label>Password</label></td>
+            <td><input type="password" [(ngModel)]="password" name="secondName.password" required></td>
+        </tr>
+        <tr>
+            <td><button [disabled]="!userName" (click)="login()">Login</button></td>
+            <td><button (click)="clear()">Clear</button></td>
+        </tr>
+    </table>
+</form>
+
+<button (click)="sendToParent()">click me i am test2</button>
