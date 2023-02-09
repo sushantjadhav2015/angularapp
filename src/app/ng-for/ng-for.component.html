@@ -1,0 +1,59 @@
+<div>
+    <div>
+        <h3>{{title}}</h3>
+    </div>
+    <div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>S.no</th>
+                        <th>Title</th>
+                        <th>Director</th>
+                        <th>Cast</th>
+                        <th>ReleaseDate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let movie of movies; let i=index; let evenItem =even; let oddItem=odd"
+                        [class.even]="evenItem" [class.odd]="oddItem">
+                        <td>{{i+1}}</td>
+                        <td>{{movie.title}}</td>
+                        <td>{{movie.director}}</td>
+                        <td>{{movie.cast}}</td>
+                        <td>{{movie.releaseDate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<p>Unorder list using *ngFor directive</p>
+<ul>
+    <li *ngFor="let song of fevsong; let i=index; let evenItem =even; let oddItem=odd" [class.even]="evenItem" [class.odd]="oddItem" >{{song}}</li>
+</ul>
+
+<!-- Assignment on country and state with ngFor directive -->
+
+<div class="country">
+    <h3>Assignment on Dropdown using *ngFor directive</h3>
+    <table>
+        <tr>
+            <td>Country name :</td>
+            <td>
+                <select (click)="changeCountrys($event.target.value)">
+                    <option value="Defualt">select</option>
+                    <option *ngFor="let count of countryList">{{count.countryName}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>State Name : </td>
+            <td>
+                <select>
+                    <option *ngFor="let state of states">{{state}}</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+</div>

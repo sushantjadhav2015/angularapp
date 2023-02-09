@@ -1,0 +1,13 @@
+.odd{
+    background-color: rgb(238, 163, 163);
+}
+
+.even{
+    background-color: rgb(149, 223, 223);
+}
+
+.country{
+    position: relative;
+    left: 300px;
+    bottom: 50px;
+}
