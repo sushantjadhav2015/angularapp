@@ -27,10 +27,24 @@
             <td><input type="password" [(ngModel)]="password" name="secondName.password" required></td>
         </tr>
         <tr>
-            <td><button [disabled]="!userName" (click)="login()">Login</button></td>
+            <td><button [disabled]="!userName" [disabled]="!password" (click)="login()">Login</button></td>
             <td><button (click)="clear()">Clear</button></td>
         </tr>
     </table>
 </form>
 
 <button (click)="sendToParent()">click me i am test2</button>
+
+<!-- Create click event -->
+<button (click)="getName(myName)">Click get my name</button>
+<br><br>
+<input type="text" #box (keyup.enter)="keyUpEvent(box.value)" placeholder="keyup with enter ">
+<!-- we can also use space instance of enter  -->
+<input type="text" (blur)="keyUpEvent('Blur event is called')" (keydown)="keyUpEvent('keydown is called')"
+    placeholder="blur and keydown event used">
+<!-- we can use multiple event at same time -->
+<br><br>
+
+<!-- get data from input to console by click -->
+<input type="text" #box1 (keyup.enter)="getData('enter key pressed')">
+<button (click)="getData(box1.value)">Get Data</button><br>{{currentvale}}

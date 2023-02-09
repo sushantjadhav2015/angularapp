@@ -7,19 +7,37 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
   styleUrls: ["./test2.component.css"],
 })
 export class Test2Component implements OnInit {
-  @Input() child: string; //input property decorator
+  @Input() child: string; //input property decorator (data transfer from paraent to chaild)
 
   @Output() fromChild: EventEmitter<string> = new EventEmitter<string>(); // output decorater property
 
   count: number = 0;
   fristName: string = "rocy";
   userName: string;
+  password: number | string;
+
   lastname: string = "Bhai";
-  password: any;
+
+  myName: string = "sushant jadhav";
+  currentVale = "";
   constructor() {}
 
   ngOnInit() {
     console.log(this.child);
+  }
+
+  // click event
+  getName(myName) {
+    alert(myName);
+  }
+  // keyup event
+  keyUpEvent(eve) {
+    console.log(eve);
+  }
+
+  getData(val) {
+    console.log(val);
+    this.currentVale = val;
   }
 
   // on click button

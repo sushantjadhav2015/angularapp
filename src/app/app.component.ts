@@ -33,15 +33,15 @@ export class AppComponent {
     "https://images.unsplash.com/photo-1420593248178-d88870618ca0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bmF0dXJhbHxlbnwwfHwwfHw%3D&w=1000&q=80";
 
   // properties of password genrator
-  // passwordLength = "";
-  // useLetter = true;
-  // useNumber = true;
-  // useSymbole = true;
-  // generatePassword ='';
+  passwordLength = 0;
+  useLetter = true;
+  useNumber = true;
+  useSymbole = true;
+  generatepassword = "";
 
-  // private letter = "abcdefghijklmnopqrstuvwxyz";
-  // private number = "1234567890";
-  // private symbole = "!@#$%^&*=+/";
+  private letter = "abcdefghijklmnopqrstuvwxyz";
+  private number = "1234567890";
+  private symbole = "!@#$%^&*=+/";
 
   constructor() {
     this.getEmployeeCount();
@@ -68,19 +68,22 @@ export class AppComponent {
     return currentdate;
   }
 
-  //   getPassword() {
-  //     let charset = "";
+  getsPassword() {
+    let charset = "";
 
-  //     if (this.useLetter) {
-  //       charset += this.useLetter;
-  //     }if (this.useNumber) {
-  //       charset += this.useNumber;
-  //     }
-  //     if (this.useSymbole) {
-  //       charset+=this.useSymbole
-  //     }
-  //     this.generatePassword=Array.from({length:this.passwordLength},()=>charset.charAt(Math.floor(Math.random()*charset.length))).join('');
-  //   }
+    if (this.useLetter) {
+      charset += this.useLetter;
+    }
+    if (this.useNumber) {
+      charset += this.useNumber;
+    }
+    if (this.useSymbole) {
+      charset += this.useSymbole;
+    }
+    this.generatepassword = Array.from({ length: this.passwordLength }, () =>
+      charset.charAt(Math.floor(Math.random() * charset.length))
+    ).join("");
+  }
 
   // output decorator
   onParent(val) {
@@ -94,4 +97,5 @@ export class AppComponent {
   fromEmpDetails(details) {
     console.log(`Details from Object :`, details);
   }
+  
 }

@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { generate } from "rxjs";
 
 @Component({
   selector: "app-auto-password",
@@ -6,8 +7,12 @@ import { Component, Input, OnInit } from "@angular/core";
   styleUrls: ["./auto-password.component.css"],
 })
 export class AutoPasswordComponent implements OnInit {
-
+  @Output() password: EventEmitter<string> = new EventEmitter<string>();
   constructor() {}
 
   ngOnInit() {}
+
+  getPassword() {
+    this.password.emit();
+  }
 }
