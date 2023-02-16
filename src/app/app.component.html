@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!{{name}}
     <p><app-demo></app-demo></p>
@@ -7,10 +7,10 @@
     <h5>{{currentTime()}}
     </h5>
   </h1>
-  <!-- <img width="300" alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="> -->
-  <!-- <img [src]="imageUrl" alt="nature image" width="350px" height="250px"> -->
-</div>
+  <img width="300" alt="Angular Logo"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <img [src]="imageUrl" alt="nature image" width="350px" height="250px">
+</div> -->
 <!-- <h2>Here are some links to help you start: </h2>
 <ul>
   <li>
@@ -24,26 +24,46 @@
   </li>
 </ul> -->
 
-{{data.name}} <br>
+<!-- {{data.name}} <br>
 {{ data.id}} <br>
 
-{{5*5}} <br>
+{{5*5}} <br> -->
 
 
-<button type="button" class="btn btn-primary">Primary</button>
+<!-- <button type="button" class="btn btn-primary">Primary</button>
 <button type="button" class="btn btn-danger">Danger</button>
 <button type="button" class="btn btn-warning">Warning</button>
-<br>
+<br> -->
 <!-- this is selector of test2 component -->
-<app-test2 [child]="parantToChild" (fromChild)="onParent($event)"></app-test2><br>
+<!-- <app-test2 [child]="parantToChild" (fromChild)="onParent($event)"></app-test2><br> -->
 
 <!-- This is selector of card component... <app-card> is called as selector -->
-<app-card [title]="posts[0].title" [content]="posts[0].Content"></app-card>
-<app-card [title]="posts[1].title" [content]="posts[1].Content"></app-card><br>
 
-<app-auto-password (frompassword)="getsPassword()"></app-auto-password><br>
+<!-- <app-card [title]="posts[0].title" [content]="posts[0].Content"></app-card>
+<app-card [title]="posts[1].title" [content]="posts[1].Content"></app-card><br> -->
 
-<app-output-decorator (fromOut)="toOut($event)" (showingDetails)="fromEmpDetails($event)"></app-output-decorator><br>
+<!-- <app-auto-password (frompassword)="getsPassword()"></app-auto-password><br> -->
 
-<app-ng-for></app-ng-for><br>
+<!-- <app-output-decorator (fromOut)="toOut($event)" (showingDetails)="fromEmpDetails($event)"></app-output-decorator><br> -->
+
+<!-- <app-ng-for></app-ng-for><br> -->
+
+<!-- <app-ngif></app-ngif><br> -->
+
+<!-- <app-ngswitch-case></app-ngswitch-case><br> -->
+
+<!-- <app-ngstyle></app-ngstyle><br> -->
+
+<!-- <app-ngclass></app-ngclass><br> -->
+
+<!-- <app-assign-directive></app-assign-directive> -->
+
+<!-- <p appCustom>Normal paraghraph</p> -->
+
+<!-- <mat-slide-toggle>Toggle me!</mat-slide-toggle> -->
+<!-- <br> -->
+
+<app-templateform></app-templateform>
+
+<!-- <app-practice></app-practice> -->
 <router-outlet></router-outlet>

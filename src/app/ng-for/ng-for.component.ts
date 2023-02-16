@@ -53,7 +53,24 @@ export class NgForComponent implements OnInit {
     this.states = this.countryList.find((x) => x.countryName == count).states;
   }
 
-  constructor() {}
+  countries = [
+    { id: "1", name: "India" },
+    { id: "2", name: "Germany" },
+  ];
+
+  arrStates: Array<any> = [
+    { id: "s1", parentId: "2", name: "Bavaria" },
+    { id: "s2", parentId: "2", name: "Barlin" },
+    { id: "s3", parentId: "1", name: "Kerla" },
+    { id: "s4", parentId: "1", name: "Goa" },
+  ];
+
+  newstates: Array<any> = [];
 
   ngOnInit() {}
+  onCountrySelect(val) {
+    this.newstates = this.arrStates.filter(
+      (c) => c.parentId == val.target.value
+    );
+  }
 }

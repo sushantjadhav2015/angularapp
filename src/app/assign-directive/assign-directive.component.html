@@ -1,0 +1,11 @@
+<p>1) created one button </p>
+
+<button (click)="toggleButtan()">Display Details</button>
+<hr>
+
+<p *ngIf="diplatDetails">Hello Friends ,I am suhant</p>
+<!-- <p>After result :{{buttanclicks}}</p> -->
+<div *ngFor="let click of buttanclicks; index as i">
+    <p id="block" [ngStyle]="{'background-color':(i>=5)? 'blue':'white'}"
+        [ngClass]="{'text-white':(i>=5)}">{{click}}</p>
+</div>

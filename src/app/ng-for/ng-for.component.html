@@ -29,8 +29,9 @@
     </div>
 </div>
 <p>Unorder list using *ngFor directive</p>
-<ul>
-    <li *ngFor="let song of fevsong; let i=index; let evenItem =even; let oddItem=odd" [class.even]="evenItem" [class.odd]="oddItem" >{{song}}</li>
+<ul class="song">
+    <li *ngFor="let song of fevsong; let i=index; let evenItem =even; let oddItem=odd" [class.even]="evenItem"
+        [class.odd]="oddItem">{{song}}</li>
 </ul>
 
 <!-- Assignment on country and state with ngFor directive -->
@@ -56,4 +57,17 @@
             </td>
         </tr>
     </table>
+</div>
+
+<!-- another way to binding array in dropdown -->
+<div>
+    <select class="btn btn-primary dropdown-toggle" (change)="onCountrySelect($event)">
+        <option>select country</option>
+        <option value="{{c.id}}" *ngFor="let c of countries">{{c.name}}</option>
+    </select>
+
+    <select class="btn btn-success dropdown-toggle">
+        <option>select state</option>
+        <option value="{{s.id}}" *ngFor="let s of newstates">{{s.name}}</option>
+    </select>
 </div>

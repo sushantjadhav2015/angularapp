@@ -1,0 +1,72 @@
+<mat-card class="login-page">
+    <mat-card-title>
+        Login (Template-Driven)
+    </mat-card-title>
+    <mat-card-content>
+        <form class="login-form" #loginForm="ngForm">
+            <div ngModelGroup="userDetail" #userDetail="ngModelGroup">
+
+
+                <mat-form-field>
+
+                    <input matInput type="email" name="email" ngModel #email="ngModel" required email
+                        placeholder="Email">
+
+
+
+                    <!-- <small *ngIf="!email.valid && email.touched">This email is mandatory</small> -->
+                </mat-form-field>
+                <small *ngIf="!userDetail.valid && userDetail.touched">This email is mandatory</small>
+                <!-- <mat-error *ngIf="userDetail.email.errors?.required">The email is mandatory.</mat-error> -->
+                <mat-form-field>
+                    <input matInput ngModel #password="ngModel" name="password" type="password" placeholder="Password"
+                        required>
+                </mat-form-field>
+            </div>
+
+
+            <select class="form-control" name="course" [ngModel]="defaultValue">
+                <option *ngFor="let course of courses" value="{{course}}">{{course}}</option>
+            </select><br>
+
+            <div class="form-group" *ngFor="let gender of genders">
+                <input type="radio" name="gender" id="gender" value="{{gender.value}}" [ngModel]="defaultGender" class="custom-control custom-radio">
+                <label for="{{gender.id}}">{{gender.value}}</label>
+            </div><br><br>
+
+            <button mat-raised-button color="primary" (click)="login(loginForm)">Login</button>
+        </form>
+        <div class="form-val">
+            <!-- {{ loginForm.value | json}} -->
+        </div>
+    </mat-card-content>
+</mat-card>
+
+
+<!-- Feedback Form -->
+<!-- <mat-card class="feedback-page">
+    <mat-card-title class="name">
+        Feedback Form
+    </mat-card-title>
+    <mat-card-content>
+        <form class="submit-form" #submitForm="ngForm">
+            <mat-form-field>
+                <input matInput #fullName="ngModel" ngModel name="fullName" type="text" placeholder="Full Name"
+                    required>
+                <small *ngIf="!fullName.valid && fullNametouched">Name is mandatory</small>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput ngModel name="City" type="text" maxlength="10" placeholder="City" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput ngModel name="Contact Number" type="text" maxlength="10" placeholder="Mobile" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Feedback </mat-label>
+                <textarea matInput></textarea>
+            </mat-form-field>
+            <button [disabled]="!submitForm.valid" mat-raised-button color="accent"
+                (click)="submit(submitForm)">Submit</button>
+        </form>
+    </mat-card-content>
+</mat-card> -->
