@@ -1,47 +1,74 @@
 <mat-card class="login-page">
-    <mat-card-title>
-        Login (Template-Driven)
-    </mat-card-title>
-    <mat-card-content>
-        <form class="login-form" #loginForm="ngForm">
-            <div ngModelGroup="userDetail" #userDetail="ngModelGroup">
+  <mat-card-title> Login (Template-Driven) </mat-card-title>
+  <mat-card-content>
+    <form class="login-form" #loginForm="ngForm">
+      <div ngModelGroup="userDetail" #userDetail="ngModelGroup">
+        <mat-form-field>
+          <input matInput type="email" name="email" ngModel #email="ngModel" required email placeholder="Email"
+            minlength="3" maxlength="50" (blur)="checkemail(email)" />
+          <!-- pattern="^[a-zA-Z0-9._%+-]+@codemindtechnology.com$" -->
+          <mat-error *ngIf="email.errors?.minlength">
+            your email must have minimum
+            {{ email.errors?.minlength.requiredLength }} char, but it only has
+            {{ email.errors?.minlength.actualLength }}</mat-error>
+
+          <small class="text-danger" *ngIf="isEmailValid">Email domain not allowed</small>
+          <!-- <mat-error *ngIf="email.errors?.pattern">enter valid domain Name</mat-error>-->
+
+          <!-- <small *ngIf="!email.valid && email.touched">This email is mandatory</small> -->
+        </mat-form-field>
+
+        <small *ngIf="!userDetail.valid && userDetail.touched">This email is mandatory</small>
+        <!-- <mat-error *ngIf="email.errors?.required">The email is mandatory.</mat-error> -->
 
 
-                <mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" name="password" #password="ngModel" placeholder="Password" ngModel required />
+        </mat-form-field>
 
-                    <input matInput type="email" name="email" ngModel #email="ngModel" required email
-                        placeholder="Email">
+        <mat-error *ngIf="password.errors?.required">The password is mandatory.</mat-error>
+      </div>
 
+      <select class="form-control" name="course" [ngModel]="defaultValue">
+        <option *ngFor="let course of courses" value="{{ course }}">
+          {{ course }}
+        </option>
+      </select><br />
 
+      <div class="form-group" *ngFor="let gender of genders">
+        <input type="radio" name="gender" id="gender" value="{{ gender.value }}" [ngModel]="defaultGender"
+          class="custom-control custom-radio" />
+        <label for="{{ gender.id }}">{{ gender.value }}</label><br />
+      </div>
+      <br />
 
-                    <!-- <small *ngIf="!email.valid && email.touched">This email is mandatory</small> -->
-                </mat-form-field>
-                <small *ngIf="!userDetail.valid && userDetail.touched">This email is mandatory</small>
-                <!-- <mat-error *ngIf="userDetail.email.errors?.required">The email is mandatory.</mat-error> -->
-                <mat-form-field>
-                    <input matInput ngModel #password="ngModel" name="password" type="password" placeholder="Password"
-                        required>
-                </mat-form-field>
-            </div>
-
-
-            <select class="form-control" name="course" [ngModel]="defaultValue">
-                <option *ngFor="let course of courses" value="{{course}}">{{course}}</option>
-            </select><br>
-
-            <div class="form-group" *ngFor="let gender of genders">
-                <input type="radio" name="gender" id="gender" value="{{gender.value}}" [ngModel]="defaultGender" class="custom-control custom-radio">
-                <label for="{{gender.id}}">{{gender.value}}</label>
-            </div><br><br>
-
-            <button mat-raised-button color="primary" (click)="login(loginForm)">Login</button>
-        </form>
-        <div class="form-val">
-            <!-- {{ loginForm.value | json}} -->
-        </div>
-    </mat-card-content>
+      <button mat-raised-button color="primary" (click)="login(loginForm)">
+        Login
+      </button>
+    </form>
+    <div class="form-val">
+      <!-- {{ loginForm.value | json}} -->
+    </div>
+  </mat-card-content>
 </mat-card>
 
+<div class="row justify-content-center mt2" *ngIf="isSubmitted">
+  <div class="col-md-6 rounded shadow py-4">
+    <h2>Form Data</h2>
+    <p>
+      Email: <strong>{{ formData.email }}</strong>
+    </p>
+    <p>
+      Password: <strong>{{ formData.password }}</strong>
+    </p>
+    <p>
+      Course: <strong>{{ formData.course }}</strong>
+    </p>
+    <p>
+      Gender: <strong>{{ formData.gender }}</strong>
+    </p>
+  </div>
+</div>
 
 <!-- Feedback Form -->
 <!-- <mat-card class="feedback-page">
@@ -70,3 +97,7 @@
         </form>
     </mat-card-content>
 </mat-card> -->
+
+
+
+<!-- Assignment on template driven form  -->

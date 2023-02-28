@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-left rounded shadow py-5">
+      <h3>Reactive Form</h3>
+
+      <form
+        class="example-form col-12"
+        [formGroup]="reactiveForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <mat-form-field class="example-full-width col-5">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            matInput
+            formControlName="email"
+            placeholder="Ex. pat@example.com"
+          />
+          <mat-error
+            *ngIf="
+              !reactiveForm.get('email').valid &&
+              reactiveForm.get('email').touched
+            "
+          >
+            Please enter a valid email address
+          </mat-error>
+          <!-- <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field class="col-5">
+          <!-- <mat-label>Select me</mat-label> -->
+          <mat-select formControlName="course" [ngModel]="defualtCourse">
+            <mat-option value="Basic">Basic</mat-option>
+            <mat-option value="Advance">Advance</mat-option>
+            <mat-option value="Pro">Pro</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <mat-label>Enter password</mat-label>
+          <input
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            formControlName="password"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+          <mat-error
+            *ngIf="
+              reactiveForm.get('password').touched &&
+              !reactiveForm.get('password').valid
+            "
+          >
+            Please enter a valid password, password must have 8 digits
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-7">
+          <input
+            matInput
+            [min]="minDate"
+            [matDatepicker]="picker"
+            formControlName="date"
+          />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <div class="col-12 py-4 px-2">
+          <button type="submit" mat-raised-button color="accent">Submit</button>
+          <button type="reset" mat-raised-button color="primary">Reset</button>
+
+        </div>
+      </form>
+
+      <div class="row justify-content-center mt-2" *ngIf="isSubmitted">
+        <div>
+          <p>
+            Email:
+            <strong>{{ reactiveForm.get("email").value }}</strong>
+          </p>
+          <p>
+            course :
+            <strong>{{ reactiveForm.get("course").value }}</strong>
+          </p>
+          <p>
+            selected Date :
+            <strong>{{ reactiveForm.get("date").value }}</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

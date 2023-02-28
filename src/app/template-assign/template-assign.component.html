@@ -1,0 +1,194 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4 text-left">
+      <h2>Registration Form</h2>
+      <form class="form-inline"(ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+        <div ngModelGroup="userDetail" #userDetail="ngModelGroup">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+
+            <input
+              type="text"
+              class="form-control"
+              name="firstName"
+              ngModel
+              firstName
+              #firstName="ngModel"
+              placeholder="Enter first name"
+              minlength="5"
+              maxlength="8"
+              required
+              pattern="[a-zA-Z]"
+              autofocus
+            />
+            <small class="text-danger" *ngIf="firstName.errors?.required">first Name is mandatory.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="lastName"
+              lastName
+              #lastName="ngModel"
+              ngModel
+              maxlength="10"
+              placeholder="Enter last name"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input
+            type="number"
+            class="form-control"
+            name="age"
+            age
+            #age="ngModel"
+            ngModel
+            placeholder="Enter age"
+            [ngModel]="defaultAge"
+            pattern="(?:1[7-9]|20)"
+            required
+          />
+
+          <small class="text-danger" *ngIf="age.errors?.required">*</small>
+          <small class="text-danger" *ngIf="age.errors?.pattern"
+            >age requried in 17-20yrs</small
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            name="email"
+            #email="ngModel"
+            email
+            ngModel
+            class="form-control"
+            placeholder="Enter email address"
+            required
+          />
+
+          <small class="text-danger" *ngIf="email.errors?.required"
+            >Email Name is mandatory.</small
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="text"
+            name="phone"
+            #phone="ngModel"
+            phone
+            ngModel
+            class="form-control"
+            placeholder="Enter only number"
+            maxlength="10"
+            pattern="[0-9]+"
+          />
+
+          <small class="text-danger" *ngIf="phone.errors?.pattern"
+            >Only numbers</small>
+        </div>
+
+        <div class="city-group dropright">
+          <label>Select City</label>
+          <select class="form-control" name="city" [ngModel]="defaultCity">
+            <option *ngFor="let city of cities" value="{{ city }}">
+              {{ city }}
+            </option></select><br />
+        </div>
+
+        <div class="gender">
+          <label for="gender">Select Gender</label>
+          <div class="form-group" *ngFor="let gender of genders">
+            <input
+              type="radio"
+              name="gender"
+              id="gender"
+              value="{{ gender.value }}"
+              [ngModel]="defaultGender"
+              class="custom-control custom-radio"/>
+            <label for="{{ gender.id }}">{{ gender.value }}</label
+            ><br />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              [(ngModel)]="model.password"
+              #password="ngModel"
+              required
+              minlength="6"/>
+            <small class="text-danger" *ngIf="password.errors?.required">Password is required</small>
+            <small class="text-info" *ngIf="password.errors?.minlength">Password must be at least 6 characters</small>
+          </div>
+        </div>
+
+        <div class="form-group col">
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            class="form-control"
+            [(ngModel)]="model.confirmPassword"
+            #confirmPassword="ngModel"
+            required
+            pattern="{{ model.password }}"/>
+
+          <small class="text-danger" *ngIf="confirmPassword.errors?.required">Confirm Password is required</small>
+          <small class="text-info" *ngIf="confirmPassword.errors?.pattern">Passwords must match</small>
+        </div>
+
+        <div class="text-center">
+          <button class="btn btn-primary mr-1" (click)="registrationForm(f)">
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-center mt2" *ngIf="isSubmitted">
+  <div class="col-md-6 rounded shadow py-4">
+    <h2>Form Data</h2>
+    <p>
+      First Name: <strong>{{ formData.firstName }}</strong>
+    </p>
+    <p>
+      Last Name: <strong>{{ formData.lastName }}</strong>
+    </p>
+    <p>
+      Age: <strong>{{ formData.age }}</strong>
+    </p>
+    <p>
+      Email: <strong>{{ formData.email }}</strong>
+    </p>
+    <p>
+      Phone: <strong>{{ formData.phone }}</strong>
+    </p>
+    <p>
+      City: <strong>{{ formData.city }}</strong>
+    </p>
+    <p>
+      Gender: <strong>{{ formData.gender }}</strong>
+    </p>
+    <p>
+      password: <strong>{{ formData.password }}</strong>
+    </p>
+    <p>
+      confirmPassword: <strong>{{ formData.confirmpassword }}</strong>
+    </p>
+  </div>
+</div>
+ 

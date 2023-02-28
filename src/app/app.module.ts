@@ -5,7 +5,7 @@ import { AppComponent } from "./app.component";
 import { DemoComponent } from "./demo/demo.component";
 import { TestComponent } from "./test/test.component";
 import { Test2Component } from "./test2/test2.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CardComponent } from "./card/card.component";
 import { AutoPasswordComponent } from "./auto-password/auto-password.component";
 import { OutputDecoratorComponent } from "./output-decorator/output-decorator.component";
@@ -43,8 +43,16 @@ import { MatRadioModule } from "@angular/material/radio";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatStepperModule } from "@angular/material/stepper";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
-import { PracticeComponent } from "./practice/practice.component";
 import { MatExpansionModule } from "@angular/material/expansion";
+import { UserModule } from "./user/user.module";
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { TemplateAssignComponent } from './template-assign/template-assign.component';
+import { MatModule } from "./appModules/mat.module";
+import { PracticeComponent } from './practice/practice.component';
+import { CalculatorComponent } from './calculator/calculator.component';
+import { AngularCalcuComponent } from './angular-calcu/angular-calcu.component';
+import { AssiRecativeComponent } from './assi-recative/assi-recative.component';
+import { AssiReactive2Component } from './assi-reactive2/assi-reactive2.component';
 
 @NgModule({
   declarations: [
@@ -63,9 +71,15 @@ import { MatExpansionModule } from "@angular/material/expansion";
     AssignDirectiveComponent,
     CustomDirective,
     TemplateformComponent,
+    ReactiveformComponent,
+    TemplateAssignComponent,
     PracticeComponent,
+    CalculatorComponent,
+    AngularCalcuComponent,
+    AssiRecativeComponent,
+    AssiReactive2Component,
   ],
-  imports: [
+  imports: [UserModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -94,6 +108,8 @@ import { MatExpansionModule } from "@angular/material/expansion";
     MatStepperModule,
     MatProgressBarModule,
     MatExpansionModule,
+    ReactiveFormsModule,
+    MatModule
   ],
   providers: [],
   bootstrap: [AppComponent],
