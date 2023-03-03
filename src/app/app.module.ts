@@ -53,6 +53,17 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { AngularCalcuComponent } from './angular-calcu/angular-calcu.component';
 import { AssiRecativeComponent } from './assi-recative/assi-recative.component';
 import { AssiReactive2Component } from './assi-reactive2/assi-reactive2.component';
+import { MyserviceService } from "./services/myservice.service";
+import { PasswordComponent } from './password/password.component';
+import { ServicePracticeComponent } from './service-practice/service-practice.component';
+import { HttpClientModule } from "@angular/common/http";
+import { MyappComponent } from './myapp/myapp.component';
+import { AssignReactive2Component } from './assign-reactive2/assign-reactive2.component';
+import { PipeexampleComponent } from './pipeexample/pipeexample.component';
+import { CustomPipe } from './custom.pipe';
+import { SearchPipe } from './search.pipe';
+import { ProductFilterComponent } from './product-filter/product-filter.component';
+import { SearchUserPipe } from './search-user.pipe';
 
 @NgModule({
   declarations: [
@@ -78,6 +89,15 @@ import { AssiReactive2Component } from './assi-reactive2/assi-reactive2.componen
     AngularCalcuComponent,
     AssiRecativeComponent,
     AssiReactive2Component,
+    PasswordComponent,
+    ServicePracticeComponent,
+    MyappComponent,
+    AssignReactive2Component,
+    PipeexampleComponent,
+    CustomPipe,
+    SearchPipe,
+    ProductFilterComponent,
+    SearchUserPipe,
   ],
   imports: [UserModule,
     BrowserModule,
@@ -109,9 +129,10 @@ import { AssiReactive2Component } from './assi-reactive2/assi-reactive2.componen
     MatProgressBarModule,
     MatExpansionModule,
     ReactiveFormsModule,
-    MatModule
+    MatModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MyserviceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

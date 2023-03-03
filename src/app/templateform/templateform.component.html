@@ -70,6 +70,14 @@
   </div>
 </div>
 
+
+  <input type="date" [(ngModel)]="age">
+  <button type="button" (click)="ageCalculator()">calculate</button>
+  <p *ngIf="age">{{showAge}}</p>
+
+
+
+
 <!-- Feedback Form -->
 <!-- <mat-card class="feedback-page">
     <mat-card-title class="name">

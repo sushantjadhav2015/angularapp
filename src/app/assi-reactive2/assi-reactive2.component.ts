@@ -1,5 +1,11 @@
 import { Component, createPlatform, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from "@angular/forms";
 
 @Component({
   selector: "app-assi-reactive2",
@@ -8,7 +14,9 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 })
 export class AssiReactive2Component implements OnInit {
   [x: string]: any;
-  myForm: FormGroup;
+  public myForm: FormGroup | any;
+  notSame: boolean = false;
+
   // issubmitted = false;
 
   countrie = [
@@ -34,7 +42,7 @@ export class AssiReactive2Component implements OnInit {
     },
   ];
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
     this.createForm();
   }
 
@@ -55,6 +63,8 @@ export class AssiReactive2Component implements OnInit {
   }
 
   getDate() {
+    this.createForm();
+
     var date: any = new Date();
     var toDate: any = date.getDate();
     if (toDate < 10) {
@@ -71,36 +81,35 @@ export class AssiReactive2Component implements OnInit {
   }
 
   createForm() {
-    this.myForm = new FormGroup({
-      fullName: new FormControl("", [Validators.required]),
-      date: new FormControl("", Validators.required),
-      gender: new FormControl("", Validators.required),
-      countr: new FormControl("", Validators.required),
-      phoneCode: new FormControl("", [Validators.pattern(/^[6-9]\d{9}$/)]),
-      bio: new FormControl("", [
-        Validators.required,
-        Validators.maxLength(256),
-      ]),
-      userName: new FormControl("", [
-        Validators.required,
-        Validators.minLength(5),
-        Validators.maxLength(25),
-        Validators.pattern(/^([a-zA-Z0-9]){10}$/),
-      ]),
-      email: new FormControl("", [Validators.required, Validators.email]),
-      checkBox: new FormControl("", Validators.requiredTrue),
 
-      password:new FormControl ('', [Validators.required, Validators.minLength(6),Validators.pattern(/^([A-Za-z0-9])[A-Za-z0-9]{8}$/)]),
-      confirmpassword: new FormControl('', Validators.required),
-
-    }, { });
+    this.myForm = this.fb.group(
+      {
+        fullName: this.fb.control("", [Validators.required]),
+        date: this.fb.control("", Validators.required),
+        gender: this.fb.control("", Validators.required),
+        country: this.fb.control("", Validators.required),
+        phoneCode: this.fb.control("",[Validators.pattern(/^[6-9]\d{9}$/)]),
+        bio: this.fb.control("", Validators.maxLength(256)),
+        userName: this.fb.control("", [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(25),
+          Validators.pattern(/^([a-zA-Z0-9]){10}$/),
+        ]),
+        email: this.fb.control("", [Validators.required, Validators.email]),
+        checkBox: this.fb.control("", Validators.requiredTrue),
+        password: this.fb.control("", [Validators.required]),
+        confirmpassword: this.fb.control("", [Validators.required]),
+      },
+      this.validateAreEqual
+    );
   }
 
-  // onSubmit() {
-  //   this.isSubmitted = true; //to show form data on browser
-  //   // alert("method called");
-  //   console.log("myFrom", this.myForm.value);
-  // }
+  onSubmit() {
+    this.isSubmitted = true; //to show form data on browser
+    // alert("method called");
+    console.log("myFrom", this.myForm.value);
+  }
 
   get fullName() {
     return this.myForm.get("fullName");
@@ -109,5 +118,12 @@ export class AssiReactive2Component implements OnInit {
   get phoneCode() {
     return this.myForm.get("phoneCode");
   }
-  
+
+  public validateAreEqual(
+    control: AbstractControl
+  ): { notSame: boolean } | null {
+    return control.value.password === control.value.confirmpassword
+      ? null
+      : { notSame: true };
+  }
 }

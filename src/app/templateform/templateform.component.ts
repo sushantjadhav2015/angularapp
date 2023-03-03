@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { MyserviceService } from "../services/myservice.service";
 
 @Component({
   selector: "app-templateform",
@@ -7,9 +8,12 @@ import { NgForm } from "@angular/forms";
   styleUrls: ["./templateform.component.css"],
 })
 export class TemplateformComponent implements OnInit {
+  age;
+  showAge;
+
   isSubmitted = false;
 
-  isEmailValid=false;
+  isEmailValid = false;
 
   formData = {
     email: "",
@@ -34,15 +38,17 @@ export class TemplateformComponent implements OnInit {
       value: "Female",
     },
   ];
-  constructor() {}
+  constructor(private objService: MyserviceService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.showAge = this.objService.print();
+  }
 
   // lgin from
 
   login(form: NgForm) {
     this.isSubmitted = true;
-    
+
     console.log(form);
 
     this.formData.email = form.value.userDetail.email;
@@ -58,18 +64,16 @@ export class TemplateformComponent implements OnInit {
     // POST api/ Saveuser(formData);
   }
 
-  checkemail(email){
+  checkemail(email) {
     console.log(email.value);
 
-    const domain=email.value.substring(email.value.lastIndexOf('@')+1) //gmail.com
+    const domain = email.value.substring(email.value.lastIndexOf("@") + 1); //gmail.com
 
-    if (domain.toLowerCase()==='codemindtechnology.com') {
-      this.isEmailValid=false;
-    }else{
-      this.isEmailValid=true;
-
+    if (domain.toLowerCase() === "codemindtechnology.com") {
+      this.isEmailValid = false;
+    } else {
+      this.isEmailValid = true;
     }
-    
   }
 
   // feedback form
@@ -77,5 +81,11 @@ export class TemplateformComponent implements OnInit {
     console.log(submitForm.valid);
   }
 
+  ageCalculator() {
+    this.showAge=this.objService.ageCalculator(this.age)
+  }
 
+  display(){
+    this.objService.display()
+  }
 }

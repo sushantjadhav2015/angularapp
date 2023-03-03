@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { MyserviceService } from "../services/myservice.service";
 // import { log } from "console";
 
 @Component({
@@ -20,10 +21,11 @@ export class Test2Component implements OnInit {
 
   myName: string = "sushant jadhav";
   currentVale = "";
-  constructor() {}
+  constructor(private myservice:MyserviceService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     console.log(this.child);
+
   }
 
   // click event
