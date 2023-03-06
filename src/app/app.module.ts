@@ -57,13 +57,15 @@ import { MyserviceService } from "./services/myservice.service";
 import { PasswordComponent } from './password/password.component';
 import { ServicePracticeComponent } from './service-practice/service-practice.component';
 import { HttpClientModule } from "@angular/common/http";
-import { MyappComponent } from './myapp/myapp.component';
-import { AssignReactive2Component } from './assign-reactive2/assign-reactive2.component';
 import { PipeexampleComponent } from './pipeexample/pipeexample.component';
 import { CustomPipe } from './custom.pipe';
 import { SearchPipe } from './search.pipe';
 import { ProductFilterComponent } from './product-filter/product-filter.component';
 import { SearchUserPipe } from './search-user.pipe';
+import { Comp1Component } from './comp1/comp1.component';
+import { Comp2Component } from './comp2/comp2.component';
+import { Comp3Component } from './comp3/comp3.component';
+import { Comp4Component } from './comp4/comp4.component';
 
 @NgModule({
   declarations: [
@@ -91,13 +93,15 @@ import { SearchUserPipe } from './search-user.pipe';
     AssiReactive2Component,
     PasswordComponent,
     ServicePracticeComponent,
-    MyappComponent,
-    AssignReactive2Component,
     PipeexampleComponent,
     CustomPipe,
     SearchPipe,
     ProductFilterComponent,
     SearchUserPipe,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    Comp4Component,
   ],
   imports: [UserModule,
     BrowserModule,
