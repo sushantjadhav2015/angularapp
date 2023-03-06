@@ -22,7 +22,6 @@ export class ServicePracticeComponent implements OnInit {
     this.products = this.myservice.products;
 
     this.demoService.getUsers().subscribe(
-
       (data) => {
         this.users = data;
         console.log("user api results", data);
