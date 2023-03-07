@@ -1,0 +1,20 @@
+<p>permanent Address</p>
+
+<div>
+  <div class="col-6">
+    <label for="city">City</label>
+    <input type="text" placeholder="city" #city>
+  </div>
+  <div class="col-6">
+    <label for="state">State</label>
+    <input type="text" placeholder="state" #state>
+  </div>
+  <button mat-flat-button color="warn" (click)="address(city)" (click)="addr(state)">Submit</button>
+
+  <div>
+    City: <strong>{{cityName}}</strong>
+  </div>
+  <div>
+    State: <strong>{{stateName}}</strong>
+  </div>
+</div>

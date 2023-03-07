@@ -45,27 +45,31 @@ import { MatStepperModule } from "@angular/material/stepper";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { UserModule } from "./user/user.module";
-import { ReactiveformComponent } from './reactiveform/reactiveform.component';
-import { TemplateAssignComponent } from './template-assign/template-assign.component';
+import { ReactiveformComponent } from "./reactiveform/reactiveform.component";
+import { TemplateAssignComponent } from "./template-assign/template-assign.component";
 import { MatModule } from "./appModules/mat.module";
-import { PracticeComponent } from './practice/practice.component';
-import { CalculatorComponent } from './calculator/calculator.component';
-import { AngularCalcuComponent } from './angular-calcu/angular-calcu.component';
-import { AssiRecativeComponent } from './assi-recative/assi-recative.component';
-import { AssiReactive2Component } from './assi-reactive2/assi-reactive2.component';
+import { PracticeComponent } from "./practice/practice.component";
+import { CalculatorComponent } from "./calculator/calculator.component";
+import { AngularCalcuComponent } from "./angular-calcu/angular-calcu.component";
+import { AssiRecativeComponent } from "./assi-recative/assi-recative.component";
+import { AssiReactive2Component } from "./assi-reactive2/assi-reactive2.component";
 import { MyserviceService } from "./services/myservice.service";
-import { PasswordComponent } from './password/password.component';
-import { ServicePracticeComponent } from './service-practice/service-practice.component';
+import { PasswordComponent } from "./password/password.component";
+import { ServicePracticeComponent } from "./service-practice/service-practice.component";
 import { HttpClientModule } from "@angular/common/http";
-import { PipeexampleComponent } from './pipeexample/pipeexample.component';
-import { CustomPipe } from './custom.pipe';
-import { SearchPipe } from './search.pipe';
-import { ProductFilterComponent } from './product-filter/product-filter.component';
-import { SearchUserPipe } from './search-user.pipe';
-import { Comp1Component } from './comp1/comp1.component';
-import { Comp2Component } from './comp2/comp2.component';
-import { Comp3Component } from './comp3/comp3.component';
-import { Comp4Component } from './comp4/comp4.component';
+import { PipeexampleComponent } from "./pipeexample/pipeexample.component";
+import { CustomPipe } from "./custom.pipe";
+import { SearchPipe } from "./search.pipe";
+import { ProductFilterComponent } from "./product-filter/product-filter.component";
+import { SearchUserPipe } from "./search-user.pipe";
+import { Comp1Component } from "./comp1/comp1.component";
+import { Comp2Component } from "./comp2/comp2.component";
+import { Comp3Component } from "./comp3/comp3.component";
+import { Comp4Component } from "./comp4/comp4.component";
+import { Address1Component } from "./address1/address1.component";
+import { Address2Component } from "./address2/address2.component";
+import { Address3Component } from "./address3/address3.component";
+import { Address4Component } from "./address4/address4.component";
 
 @NgModule({
   declarations: [
@@ -102,8 +106,13 @@ import { Comp4Component } from './comp4/comp4.component';
     Comp2Component,
     Comp3Component,
     Comp4Component,
+    Address1Component,
+    Address2Component,
+    Address3Component,
+    Address4Component,
   ],
-  imports: [UserModule,
+  imports: [
+    UserModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -134,7 +143,7 @@ import { Comp4Component } from './comp4/comp4.component';
     MatExpansionModule,
     ReactiveFormsModule,
     MatModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [MyserviceService],
   bootstrap: [AppComponent],

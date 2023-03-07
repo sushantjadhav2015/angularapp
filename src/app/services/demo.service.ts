@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 
-// apiUrl is free source servver linck from google
+// apiUrl is free source server link from google
 //this service is created to get data from srver and display on web pages
 export class DemoService {
 apiUrl="https://jsonplaceholder.typicode.com/users"
