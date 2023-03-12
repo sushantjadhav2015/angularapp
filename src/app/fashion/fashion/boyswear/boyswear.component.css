@@ -1,0 +1,31 @@
+.card{
+    width: 302px;
+    height: 550px;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(20deg, #eed3c9,#f3f2f1);
+
+}
+
+.card-img-top{
+    width: 200px;
+    height: 302px;
+}
+
+.addToCard{
+    background-color: rgb(243, 189, 12);
+    margin-right: 15px;
+}
+
+.buy{
+    background-color: rgb(226, 106, 8);
+}
+.card-body{
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: black;
+}

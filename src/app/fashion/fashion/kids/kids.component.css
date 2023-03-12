@@ -1,0 +1,29 @@
+.card{
+    width: 302px;
+    height: 550px;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card-img-top{
+    width: 241px;
+    height: 302px;
+}
+
+.addToCard{
+    background-color: rgb(243, 189, 12);
+    margin-right: 15px;
+}
+
+.buy{
+    background-color: rgb(226, 106, 8);
+}
+.card-body{
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: rgb(53, 136, 5);
+}

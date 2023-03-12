@@ -1,0 +1,35 @@
+<p>Data of selected user</p>
+
+<div>
+    <div>
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Phone</th>
+              <th>Website</th>
+              <th>Company</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of arrUserDetails">
+                <td>{{item.id}}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.username }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.address.street }}, {{ item.address.suite }}, {{ item.address.city }} {{ item.address.zipcode }}</td>
+                <td>{{ item.phone }}</td>
+                <td>{{ item.website }}</td>
+                <td>{{ item.company.name }}, {{ item.company.catchPhrase }}, {{ item.company.bs }}</td>
+              </tr>
+                </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

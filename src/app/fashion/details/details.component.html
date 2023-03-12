@@ -1,0 +1,17 @@
+<h4 appCustom><strong>navigate route by programatically and shared service </strong></h4>
+<ul>
+  <li class="card" style="width: 18rem;" *ngFor="let product of array">
+    <img class="card-img-top" [src]="product.url" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text">{{product.content}}</p>
+    </div>
+    <div class="card-body">
+      <button (click)="addToCart()" class="addToCart" mat-flat-button color="warn"> ADD TO
+        CART
+      </button>
+      <button class="buy" mat-flat-button color="warn"><a routerLink="/fashion" class="card-link">BUY</a>
+      </button>
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,30 @@
+li{
+list-style-type: none;
+}
+
+.navbar-nav{
+    display: inline-flex;
+    flex-direction: row;
+}
+
+
+.nav-item{
+    flex-direction: row;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.nav-link{
+    color: rgb(2, 21, 37);
+    font-size: large;
+    font-weight: bold;
+}
+
+.sub-card-img{
+    width: 50%;
+}
+
+a{
+    text-decoration:none ;
+}

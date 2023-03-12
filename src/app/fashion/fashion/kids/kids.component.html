@@ -1,0 +1,70 @@
+<!-- <ul>
+    <li class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://m.media-amazon.com/images/I/61hUgw1VSfL._AC_UL320_.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Shirt</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.
+        </p>
+      </div>
+      <div class="card-body">
+        <button class="addToCard" mat-flat-button color="warn" (click)="addToCard()"> ADD TO CART
+        </button>
+        <button class="buy" mat-flat-button color="warn"><a routerLink="/fashion" class="card-link">BUY</a>
+        </button>
+      </div>
+    </li>
+  
+    <li class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://m.media-amazon.com/images/I/814XsOvGXPL._AC_UL320_.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Shirt</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.
+        </p>
+      </div>
+      <div class="card-body">
+        <button class="addToCard" mat-flat-button color="warn" (click)="addToCard()"> ADD TO CART
+        </button>
+        <button class="buy" mat-flat-button color="warn"><a routerLink="/fashion" class="card-link">BUY</a>
+        </button>
+      </div>
+    </li>
+  
+    <li class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://m.media-amazon.com/images/I/A1TyKMfm-aL._AC_UL320_.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Shirt</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.
+        </p>
+      </div>
+      <div class="card-body">
+        <button class="addToCard" mat-flat-button color="warn" (click)="addToCard()"> ADD TO CART
+        </button>
+        <button class="buy" mat-flat-button color="warn"><a routerLink="/fashion" class="card-link">BUY</a>
+        </button>
+      </div>
+    </li>
+  
+  
+  </ul> -->
+
+<ul>
+  <li class="card" style="width: 18rem;" *ngFor="let product of products">
+    <img class="card-img-top" [src]="product.url" alt="Card image cap">
+    <div class="card-body">
+      <h4><a [routerLink]="['/details', product.id]">Id:{{product.id}}</a>
+      </h4>
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text">{{product.content}}</p>
+    </div>
+    <div class="card-body">
+      <button (click)="addToCard()" class="addToCard" mat-flat-button color="warn"> ADD TO
+        CART
+      </button>
+      <button class="buy" mat-flat-button color="warn"><a routerLink="/fashion" class="card-link">BUY</a>
+      </button>
+    </div>
+  </li>
+</ul>

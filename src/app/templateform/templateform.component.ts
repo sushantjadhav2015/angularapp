@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { Router } from "@angular/router";
 import { MyserviceService } from "../services/myservice.service";
 
 @Component({
@@ -38,7 +39,7 @@ export class TemplateformComponent implements OnInit {
       value: "Female",
     },
   ];
-  constructor(private objService: MyserviceService) {}
+  constructor(private objService: MyserviceService, private route:Router) {}
 
   ngOnInit() {
     this.showAge = this.objService.print();
@@ -47,6 +48,7 @@ export class TemplateformComponent implements OnInit {
   // lgin from
 
   login(form: NgForm) {
+    this.route.navigate(['/userdetail'])
     this.isSubmitted = true;
 
     console.log(form);

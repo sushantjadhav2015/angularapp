@@ -1,0 +1,29 @@
+.card{
+    width: 302px;
+    height: 548px;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card-img-top{
+    width: 250px;
+    height: 302px;
+}
+
+.addToCart{
+    background-color: rgb(243, 189, 12);
+    margin-right: 15px;
+}
+
+.buy{
+    background-color: rgb(226, 106, 8);
+}
+.card-body{
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: black;
+}

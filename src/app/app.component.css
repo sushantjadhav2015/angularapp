@@ -3,3 +3,10 @@ h1 {
   background-color: aqua;
 }
 *{margin: 0;}
+
+.navbar{
+  background-color: rgb(145, 58, 216);
+}
+.nav-link{
+  color: aliceblue;
+}

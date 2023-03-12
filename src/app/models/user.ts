@@ -1,0 +1,22 @@
+export class User{
+    id:number
+    userName:string
+    email:string
+    address:{
+        street:string
+        suite:string
+        city:string
+        zipcode:number
+        geo:{
+            lat:number
+            lng:number
+        }
+    }
+    phone:number
+    website:string
+    company:{
+        name:string
+        catchPharse:string
+        bs:string
+    }      
+}

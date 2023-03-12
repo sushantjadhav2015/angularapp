@@ -17,7 +17,7 @@ import { NgclassComponent } from "./ngclass/ngclass.component";
 import { AssignDirectiveComponent } from "./assign-directive/assign-directive.component";
 
 // angular material modules
-import { CustomDirective } from "./custom.directive";
+// import { CustomDirective } from "./custom.directive";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { TemplateformComponent } from "./templateform/templateform.component";
@@ -59,9 +59,9 @@ import { ServicePracticeComponent } from "./service-practice/service-practice.co
 import { HttpClientModule } from "@angular/common/http";
 import { PipeexampleComponent } from "./pipeexample/pipeexample.component";
 import { CustomPipe } from "./custom.pipe";
-import { SearchPipe } from "./search.pipe";
+import { SearchPipe } from "./pipes/search.pipe";
 import { ProductFilterComponent } from "./product-filter/product-filter.component";
-import { SearchUserPipe } from "./search-user.pipe";
+import { SearchUserPipe } from "./pipes/search-user.pipe";
 import { Comp1Component } from "./comp1/comp1.component";
 import { Comp2Component } from "./comp2/comp2.component";
 import { Comp3Component } from "./comp3/comp3.component";
@@ -70,6 +70,25 @@ import { Address1Component } from "./address1/address1.component";
 import { Address2Component } from "./address2/address2.component";
 import { Address3Component } from "./address3/address3.component";
 import { Address4Component } from "./address4/address4.component";
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { HomeComponent } from './home/home.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { EproductComponent } from './eproduct/eproduct.component';
+import { WashingmachineComponent } from './eproduct/washingmachine/washingmachine.component';
+import { RefrigeratorComponent } from './eproduct/refrigerator/refrigerator.component';
+import { VacuumcleanerComponent } from './eproduct/vacuumcleaner/vacuumcleaner.component';
+import { MobileComponent } from './product/mobile/mobile.component';
+import { DemopostComponent } from './demopost/demopost.component';
+import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
+import { DemouserComponent } from './demouser/demouser.component';
+import { DemouserdetailsComponent } from './demouserdetails/demouserdetails.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { ProductModule } from "./product/product.module";
+import { OrdersModule } from "./orders/orders.module";
+import { FashionModule } from "./fashion/fashion.module";
+import { AddToCardComponent } from './add-to-card/add-to-card.component';
+import { FashComponent } from './fash/fash.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +105,7 @@ import { Address4Component } from "./address4/address4.component";
     NgstyleComponent,
     NgclassComponent,
     AssignDirectiveComponent,
-    CustomDirective,
+    //CustomDirective,
     TemplateformComponent,
     ReactiveformComponent,
     TemplateAssignComponent,
@@ -110,6 +129,22 @@ import { Address4Component } from "./address4/address4.component";
     Address2Component,
     Address3Component,
     Address4Component,
+    AboutusComponent,
+    ContactusComponent,
+    HomeComponent,
+    PagenotfoundComponent,    
+    EproductComponent,
+    WashingmachineComponent,
+    RefrigeratorComponent,
+    VacuumcleanerComponent,
+    MobileComponent,
+    DemopostComponent,
+    DemopostdetailsComponent,
+    DemouserComponent,
+    DemouserdetailsComponent,
+    UserdetailsComponent,
+    AddToCardComponent,
+    FashComponent,
   ],
   imports: [
     UserModule,
@@ -144,6 +179,9 @@ import { Address4Component } from "./address4/address4.component";
     ReactiveFormsModule,
     MatModule,
     HttpClientModule,
+    ProductModule,
+    OrdersModule,
+    FashionModule
   ],
   providers: [MyserviceService],
   bootstrap: [AppComponent],

@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+  <!-- <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink="boys">
+            <img alt="boys's clothing"
+              src="https://m.media-amazon.com/images/G/31/img22/Fashion/AF/Flips/Winter22/halo/Halo_1._SS300_QL85_.jpg"
+              class="sub-card-img">
+          <span class="nav-link"><strong>Boy's clothing</strong></span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="kids">
+            <img alt="kid's clothing"
+              src="https://m.media-amazon.com/images/G/31/img22/Fashion/Event/Jupiter22/teaser/Halos/Deals/11._SS300_QL85_.jpg"
+              class="sub-card-img">
+          <span class="nav-link"><strong>Kid's clothing</strong></span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="manswear">
+            <img alt="man's clothing"
+              src="https://m.media-amazon.com/images/G/31/img21/MA2022/Winterflip2/P0/HALO/2._SS300_QL85_.jpg"
+              class="sub-card-img">
+          <span class="nav-link"><strong>Man's clothing</strong></span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a routerLink="womenwear">
+            <img alt="boys's clothing"
+              src="https://m.media-amazon.com/images/G/31/img22/Fashion/Event/Jupiter22/teaser/Halos/Deals/02._SS300_QL85_.jpg"
+              class="sub-card-img">
+          <span class="nav-link"><strong>Women's clothing</strong></span>
+        </a>
+      </li>
+
+    </ul> -->
+
+    <div class="col-md-8">
+      <input type="text" class="search" placeholder="search here!!" [(ngModel)]="title" >
+    </div>
+    <div class="col-md-8">
+      <ul class="navbar-nav">
+        <li class="nav-item" *ngFor="let product of fashion | searchCatogary:title">
+          <a [routerLink]="product.link">
+            <img [src]="product.url" class="sub-card-img" alt="">
+            <span class="nav-link"><strong>{{product.title}}</strong></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+</div>
+
+<body>
+  <div class="row-md-6">
+    <router-outlet></router-outlet>
+  </div>
+
+</body>
