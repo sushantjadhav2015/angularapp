@@ -1,0 +1,29 @@
+<p>todo works!</p>
+<input type="text" [(ngModel)]="courseName" placeholder="Course">
+
+<input type="text" [(ngModel)]="newData" placeholder="Student Name">
+<button class="btn btn-primary" (click)="createTodo()" >Create</button>
+
+<div class="container">
+    <table class="table">
+        <thead>
+         <tr>
+            <th>ID</th>
+            <th>Course</th>
+            <th>Student Name</th>
+            <th>Actions</th>
+         </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of todoList">
+                <td>{{todo.id}}</td>
+                <td>{{todo.course}}</td>
+                <td>{{todo.studentName}}</td>
+                <td>
+                    <button type="button" class="btn btn-link" (click)="editTodo(todo)" >Edit</button>
+                    <button type="button" class="btn btn-link" (click)="deleteTodo(todo.id)" >Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

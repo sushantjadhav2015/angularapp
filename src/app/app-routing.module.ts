@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { Routes, RouterModule, PreloadAllModules } from "@angular/router";
 import { AboutusComponent } from "./aboutus/aboutus.component";
 import { ContactusComponent } from "./contactus/contactus.component";
 import { DemopostComponent } from "./demopost/demopost.component";
@@ -27,14 +27,25 @@ import { ManswearComponent } from "./fashion/fashion/manswear/manswear.component
 import { WomenwearComponent } from "./fashion/fashion/womenwear/womenwear.component";
 import { AddToCardComponent } from "./add-to-card/add-to-card.component";
 import { DetailsComponent } from "./fashion/details/details.component";
+import { CustomerListComponent } from "./customer/customer-list/customer-list.component";
+import { AdminListComponent } from "./admin/admin-list/admin-list.component";
+import { TodoComponent } from "./todo/todo.component";
+import { FirebasePracticeComponent } from "./firebase-practice/firebase-practice.component";
+import { LoginformComponent } from "./loginform/loginform.component";
+import { AuthGuard } from "./auth.guard";
+import { WikipidiaComponent } from "./wikipidia/wikipidia.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
-  { path: "home", component: HomeComponent },
+  {
+    path: "home",
+    component: HomeComponent,
+    children: [{ path: "firebase", component: FirebasePracticeComponent }],
+  },
   { path: "aboutus", component: AboutusComponent }, //we are providing path of component or maping path of component
   { path: "contactus", component: ContactusComponent },
   {
-    path: "product",
+    path: "product",canActivate:[AuthGuard],
     component: ProductComponent,
     children: [
       { path: "laptop", component: LaptopComponent },
@@ -59,7 +70,7 @@ const routes: Routes = [
   { path: "userdetails/:id", component: DemouserdetailsComponent },
 
   { path: "userdetail", component: UserdetailsComponent }, // used for open on new page by programaticaly
-  { path: "login", component: TemplateformComponent }, // used for open on new page by programaticaly
+  { path: "login", component: LoginformComponent }, // used for open on new page by programaticaly
 
   { path: "order", component: OrderlistComponent },
 
@@ -73,15 +84,27 @@ const routes: Routes = [
       { path: "womenwear", component: WomenwearComponent },
     ],
   },
-  {path:'details/:id',component:DetailsComponent},
+  { path: "details/:id", component: DetailsComponent },
   { path: "addtocard", component: AddToCardComponent },
+
+  // {path:'customer',component:CustomerListComponent},//used to show lazy module loading
+  // {path:'admin', component:AdminListComponent},
+  {path: "customer", loadChildren: "./customer/customer.module#CustomerModule"},
+  { path: "admin", loadChildren: "./admin/admin.module#AdminModule" },
+  { path: "todo", component: TodoComponent },
+  {path:"wikipidia", component:WikipidiaComponent},
+
+
+
 
   { path: "**", component: PagenotfoundComponent },
 ];
 
 @NgModule({
   //NgModel provide meta data to corsponding modules
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

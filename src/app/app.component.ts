@@ -1,12 +1,28 @@
 import { Content } from "@angular/compiler/src/render3/r3_ast";
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { RapidapiService } from "./rapidapi.service";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+
+  arrayNews=[];
+  constructor(private rapidapiService:RapidapiService) {
+    this.getEmployeeCount();
+  }
+
+  ngOnInit() {
+    this.rapidapiService.getFinance().subscribe(res=>{
+      console.log(`rapid res`,res);
+      this.arrayNews.push(res)
+    })
+  
+  }
+
   parantToChild: string = "I am coming from parant"; //use for data transfer from child to paraant
   // input decorater
   posts = [
@@ -43,9 +59,6 @@ export class AppComponent {
   private number = "1234567890";
   private symbole = "!@#$%^&*=+/";
 
-  constructor() {
-    this.getEmployeeCount();
-  }
   getEmployeeCount() {
     this.empcount = 10000;
   }

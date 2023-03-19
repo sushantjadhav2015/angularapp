@@ -56,7 +56,7 @@ import { AssiReactive2Component } from "./assi-reactive2/assi-reactive2.componen
 import { MyserviceService } from "./services/myservice.service";
 import { PasswordComponent } from "./password/password.component";
 import { ServicePracticeComponent } from "./service-practice/service-practice.component";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { PipeexampleComponent } from "./pipeexample/pipeexample.component";
 import { CustomPipe } from "./custom.pipe";
 import { SearchPipe } from "./pipes/search.pipe";
@@ -89,6 +89,14 @@ import { OrdersModule } from "./orders/orders.module";
 import { FashionModule } from "./fashion/fashion.module";
 import { AddToCardComponent } from './add-to-card/add-to-card.component';
 import { FashComponent } from './fash/fash.component';
+import { CustomerModule } from "./customer/customer.module";
+import { AdminModule } from "./admin/admin.module";
+import { TodoComponent } from './todo/todo.component';
+import { FirebasePracticeComponent } from './firebase-practice/firebase-practice.component';
+import { LoginformComponent } from './loginform/loginform.component';
+import { AuthInterceptorService } from "./auth(interceptor)/auth-interceptor.service";
+import { WikipidiaComponent } from './wikipidia/wikipidia.component';
+
 
 @NgModule({
   declarations: [
@@ -145,6 +153,10 @@ import { FashComponent } from './fash/fash.component';
     UserdetailsComponent,
     AddToCardComponent,
     FashComponent,
+    TodoComponent,
+    FirebasePracticeComponent,
+    LoginformComponent,
+    WikipidiaComponent,
   ],
   imports: [
     UserModule,
@@ -181,9 +193,17 @@ import { FashComponent } from './fash/fash.component';
     HttpClientModule,
     ProductModule,
     OrdersModule,
-    FashionModule
+    FashionModule,
+    CustomerModule,
+    AdminModule,
   ],
-  providers: [MyserviceService],
+  providers: [
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+  },
+   MyserviceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

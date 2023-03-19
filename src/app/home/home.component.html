@@ -1,1 +1,17 @@
-<p>home works!</p>
+<p>Angular CRUD -post method</p>
+
+<button class="btn btn-primary" (click)="createPosts()">Create post</button>
+<button class="btn btn-success" (click)="getData()">get post</button>
+
+<mat-divider></mat-divider>
+
+<div>
+    <table>
+        <tr *ngFor="let item of arrayApi">
+            <td>{{item.title}}</td>
+        </tr>
+    </table>
+</div>
+
+<!-- <mat-divider></mat-divider>
+<app-firebase-practice></app-firebase-practice> -->

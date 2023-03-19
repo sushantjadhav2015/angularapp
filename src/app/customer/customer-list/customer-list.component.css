@@ -1,0 +1,32 @@
+h3 {
+  color: coral;
+}
+
+.news th,
+.news td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+thead {
+  background-color: rgb(5, 119, 81);
+  color: #ddd;
+}
+
+.quotes th,
+.quotes td {
+  padding: 4px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  margin: 5px;
+}
+
+.odd {
+    background-color: rgb(245, 245, 234);
+  }
+  
+  .even {
+    background-color: rgb(241, 243, 210);
+  }
+  

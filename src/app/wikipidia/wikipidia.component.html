@@ -1,0 +1,26 @@
+
+<div class="container">
+  <h3>Wikipidia Assignment</h3>
+  <div class="row justify-content-center">
+    <div class="serarch">
+      <input type="text" class="search" placeholder="search here!!" >
+      <button (click)="getData()" >Search</button>
+    </div>
+    <div>
+      <table>
+        <thead>
+          <th>Title</th>
+          <th>Word Count</th>
+          <th>Snippet</th>
+        </thead>
+        <thead>
+          <tr *ngFor="let item of arrayData">
+            <td>{{item.title}}</td>
+            <td>{{item.wordcount}}</td>
+            <td>{{item.snippet}}</td>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>

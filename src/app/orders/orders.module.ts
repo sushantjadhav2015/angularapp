@@ -7,4 +7,9 @@ import { UtilityModule } from "../shared/utility/utility.module";
   declarations: [OrderlistComponent],
   imports: [CommonModule, UtilityModule],
 })
-export class OrdersModule {}
+export class OrdersModule {
+  constructor(){
+    console.log(`OrderModule called`);
+    
+  }
+}
