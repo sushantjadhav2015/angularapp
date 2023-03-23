@@ -70,33 +70,39 @@ import { Address1Component } from "./address1/address1.component";
 import { Address2Component } from "./address2/address2.component";
 import { Address3Component } from "./address3/address3.component";
 import { Address4Component } from "./address4/address4.component";
-import { AboutusComponent } from './aboutus/aboutus.component';
-import { ContactusComponent } from './contactus/contactus.component';
-import { HomeComponent } from './home/home.component';
-import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { EproductComponent } from './eproduct/eproduct.component';
-import { WashingmachineComponent } from './eproduct/washingmachine/washingmachine.component';
-import { RefrigeratorComponent } from './eproduct/refrigerator/refrigerator.component';
-import { VacuumcleanerComponent } from './eproduct/vacuumcleaner/vacuumcleaner.component';
-import { MobileComponent } from './product/mobile/mobile.component';
-import { DemopostComponent } from './demopost/demopost.component';
-import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
-import { DemouserComponent } from './demouser/demouser.component';
-import { DemouserdetailsComponent } from './demouserdetails/demouserdetails.component';
-import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { AboutusComponent } from "./aboutus/aboutus.component";
+import { ContactusComponent } from "./contactus/contactus.component";
+import { HomeComponent } from "./home/home.component";
+import { PagenotfoundComponent } from "./pagenotfound/pagenotfound.component";
+import { EproductComponent } from "./eproduct/eproduct.component";
+import { WashingmachineComponent } from "./eproduct/washingmachine/washingmachine.component";
+import { RefrigeratorComponent } from "./eproduct/refrigerator/refrigerator.component";
+import { VacuumcleanerComponent } from "./eproduct/vacuumcleaner/vacuumcleaner.component";
+import { MobileComponent } from "./product/mobile/mobile.component";
+import { DemopostComponent } from "./demopost/demopost.component";
+import { DemouserComponent } from "./demouser/demouser.component";
+import { DemouserdetailsComponent } from "./demouserdetails/demouserdetails.component";
+import { UserdetailsComponent } from "./userdetails/userdetails.component";
 import { ProductModule } from "./product/product.module";
 import { OrdersModule } from "./orders/orders.module";
 import { FashionModule } from "./fashion/fashion.module";
-import { AddToCardComponent } from './add-to-card/add-to-card.component';
-import { FashComponent } from './fash/fash.component';
+import { AddToCardComponent } from "./add-to-card/add-to-card.component";
+import { FashComponent } from "./fash/fash.component";
 import { CustomerModule } from "./customer/customer.module";
 import { AdminModule } from "./admin/admin.module";
-import { TodoComponent } from './todo/todo.component';
-import { FirebasePracticeComponent } from './firebase-practice/firebase-practice.component';
-import { LoginformComponent } from './loginform/loginform.component';
+import { TodoComponent } from "./todo/todo.component";
+import { FirebasePracticeComponent } from "./firebase-practice/firebase-practice.component";
+import { LoginformComponent } from "./loginform/loginform.component";
 import { AuthInterceptorService } from "./auth(interceptor)/auth-interceptor.service";
-import { WikipidiaComponent } from './wikipidia/wikipidia.component';
-
+import { WikipidiaComponent } from "./wikipidia/wikipidia.component";
+import { HocksComponent } from "./hocks/hocks.component";
+import { WikiSearchComponent } from "./wiki-search/wiki-search.component";
+import { PageListComponent } from "./wiki-search/page-list/page-list.component";
+import { SearchBarComponent } from "./wiki-search/search-bar/search-bar.component";
+import { HooksComponent } from './hooks/hooks.component';
+import { HooksChildComponent } from './hooks/hooks-child/hooks-child.component';
+import { DemopostdetailsComponent } from "./demouserdetails/demopostdetails/demopostdetails.component";
+import { AddUserCanDeactiveComponent } from "./add-user-can-deactive/add-user-can-deactive.component";
 
 @NgModule({
   declarations: [
@@ -140,7 +146,7 @@ import { WikipidiaComponent } from './wikipidia/wikipidia.component';
     AboutusComponent,
     ContactusComponent,
     HomeComponent,
-    PagenotfoundComponent,    
+    PagenotfoundComponent,
     EproductComponent,
     WashingmachineComponent,
     RefrigeratorComponent,
@@ -157,6 +163,13 @@ import { WikipidiaComponent } from './wikipidia/wikipidia.component';
     FirebasePracticeComponent,
     LoginformComponent,
     WikipidiaComponent,
+    HocksComponent,
+    WikiSearchComponent,
+    PageListComponent,
+    SearchBarComponent,
+    HooksComponent,
+    HooksChildComponent,
+    AddUserCanDeactiveComponent
   ],
   imports: [
     UserModule,
@@ -199,11 +212,12 @@ import { WikipidiaComponent } from './wikipidia/wikipidia.component';
   ],
   providers: [
     {
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptorService,
-    multi: true
-  },
-   MyserviceService],
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+    MyserviceService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,12 +1,6 @@
-import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { WikiServiceService } from "../services/wiki-service.service";
 
-interface ServerResponse {
-  query: {
-    search: Array<any>;
-  };
-}
 
 @Component({
   selector: "app-wikipidia",
@@ -14,17 +8,16 @@ interface ServerResponse {
   styleUrls: ["./wikipidia.component.css"],
 })
 export class WikipidiaComponent implements OnInit {
-  arrayData=[];
-  space: string;
-
   constructor(private wikiService: WikiServiceService) {}
-
+  arrayData = [];
   ngOnInit() {}
 
-  getData(space: string) {
-    this.wikiService.getData(this.space).subscribe((res: ServerResponse) => {
+  getdata(uname: any) {
+    this.wikiService.search(uname.value).subscribe((res:any) => {
       this.arrayData = res.query.search;
       console.log("data coming from server", res);
+      console.log(uname.value);
+      
     });
   }
 }

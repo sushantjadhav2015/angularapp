@@ -1,0 +1,11 @@
+<input type="text" placeholder="Enter value" (blur)="handleData($event)">
+
+<button class="btn btn-primary" (click)="OnDestroy()">OnDestroy</button>
+
+<p>{{myObservable | async}}</p>
+<app-hooks-child [parent_Data]="data">
+  
+  <h1 #childs *ngIf="appChildExist">
+    This is the parant data show on child componant
+  </h1>
+</app-hooks-child>

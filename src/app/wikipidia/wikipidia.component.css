@@ -27,3 +27,25 @@ button {
   font-size: 16px;
   margin-top: 5px;
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #e7973b;
+  font-weight: bold;
+
+}
+
+.data{
+  margin-top: 20px;
+}
+

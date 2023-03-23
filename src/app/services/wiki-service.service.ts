@@ -7,8 +7,8 @@ import { Injectable } from "@angular/core";
 export class WikiServiceService {
   constructor(private http: HttpClient) {}
 
-  getData(space: string) {
-    return this.http.get("https://en.wikipedia.org/w/api.php?", {
+  search(space: string) {
+    return this.http.get("https://en.wikipedia.org/w/api.php", {
       params: {
         action: "query",
         format: "json",

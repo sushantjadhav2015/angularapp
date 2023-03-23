@@ -21,7 +21,5 @@ export class LoginformComponent implements OnInit {  msg;
    } else {
     this.msg = 'Invalid user name or password'
    }
-
   }
-
 }

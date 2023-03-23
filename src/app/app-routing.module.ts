@@ -3,7 +3,6 @@ import { Routes, RouterModule, PreloadAllModules } from "@angular/router";
 import { AboutusComponent } from "./aboutus/aboutus.component";
 import { ContactusComponent } from "./contactus/contactus.component";
 import { DemopostComponent } from "./demopost/demopost.component";
-import { DemopostdetailsComponent } from "./demopostdetails/demopostdetails.component";
 import { DemouserComponent } from "./demouser/demouser.component";
 import { DemouserdetailsComponent } from "./demouserdetails/demouserdetails.component";
 import { EproductComponent } from "./eproduct/eproduct.component";
@@ -34,6 +33,13 @@ import { FirebasePracticeComponent } from "./firebase-practice/firebase-practice
 import { LoginformComponent } from "./loginform/loginform.component";
 import { AuthGuard } from "./auth.guard";
 import { WikipidiaComponent } from "./wikipidia/wikipidia.component";
+import { WikiSearchComponent } from "./wiki-search/wiki-search.component";
+import { HocksComponent } from "./hocks/hocks.component";
+import { HooksComponent } from "./hooks/hooks.component";
+import { HooksChildComponent } from "./hooks/hooks-child/hooks-child.component";
+import { AddUserCanDeactiveComponent } from "./add-user-can-deactive/add-user-can-deactive.component";
+import { UnsavedchangesGuard } from "./unsavedchanges.guard";
+import { DemopostdetailsComponent } from "./demouserdetails/demopostdetails/demopostdetails.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
@@ -45,7 +51,8 @@ const routes: Routes = [
   { path: "aboutus", component: AboutusComponent }, //we are providing path of component or maping path of component
   { path: "contactus", component: ContactusComponent },
   {
-    path: "product",canActivate:[AuthGuard],
+    path: "product",
+    canActivate: [AuthGuard],
     component: ProductComponent,
     children: [
       { path: "laptop", component: LaptopComponent },
@@ -89,13 +96,26 @@ const routes: Routes = [
 
   // {path:'customer',component:CustomerListComponent},//used to show lazy module loading
   // {path:'admin', component:AdminListComponent},
-  {path: "customer", loadChildren: "./customer/customer.module#CustomerModule"},
+  {
+    path: "customer",
+    loadChildren: "./customer/customer.module#CustomerModule",
+  },
   { path: "admin", loadChildren: "./admin/admin.module#AdminModule" },
   { path: "todo", component: TodoComponent },
-  {path:"wikipidia", component:WikipidiaComponent},
+  { path: "wikipidia", component: WikipidiaComponent },
+  { path: "wikiSearch", component: WikiSearchComponent },
+  { path: "hooks", component: HocksComponent },
+  {
+    path: "hook",
+    component: HooksComponent,
+    children: [{ path: "hooks_child", component: HooksChildComponent }],
+  },
 
-
-
+  {
+    path: "adduser",
+    component: AddUserCanDeactiveComponent,
+    canDeactivate: [UnsavedchangesGuard],
+  },
 
   { path: "**", component: PagenotfoundComponent },
 ];

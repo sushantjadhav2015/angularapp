@@ -9,6 +9,7 @@ import { RapidapiService } from "./rapidapi.service";
 })
 export class AppComponent implements OnInit {
 
+dataNumber:string='red'
 
   arrayNews=[];
   constructor(private rapidapiService:RapidapiService) {
@@ -111,4 +112,7 @@ export class AppComponent implements OnInit {
     console.log(`Details from Object :`, details);
   }
   
+  // handleData(value) {
+  //   this.dataNumber = value.target.value;
+  // }
 }
