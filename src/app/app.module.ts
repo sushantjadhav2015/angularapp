@@ -103,6 +103,7 @@ import { HooksComponent } from './hooks/hooks.component';
 import { HooksChildComponent } from './hooks/hooks-child/hooks-child.component';
 import { DemopostdetailsComponent } from "./demouserdetails/demopostdetails/demopostdetails.component";
 import { AddUserCanDeactiveComponent } from "./add-user-can-deactive/add-user-can-deactive.component";
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -169,7 +170,8 @@ import { AddUserCanDeactiveComponent } from "./add-user-can-deactive/add-user-ca
     SearchBarComponent,
     HooksComponent,
     HooksChildComponent,
-    AddUserCanDeactiveComponent
+    AddUserCanDeactiveComponent,
+    RxjsComponent
   ],
   imports: [
     UserModule,

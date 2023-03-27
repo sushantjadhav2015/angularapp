@@ -40,6 +40,8 @@ import { HooksChildComponent } from "./hooks/hooks-child/hooks-child.component";
 import { AddUserCanDeactiveComponent } from "./add-user-can-deactive/add-user-can-deactive.component";
 import { UnsavedchangesGuard } from "./unsavedchanges.guard";
 import { DemopostdetailsComponent } from "./demouserdetails/demopostdetails/demopostdetails.component";
+import { ResolveGaurdGuard } from "./resolve-gaurd.guard";
+import { RxjsComponent } from "./rxjs/rxjs.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
@@ -105,6 +107,7 @@ const routes: Routes = [
   { path: "wikipidia", component: WikipidiaComponent },
   { path: "wikiSearch", component: WikiSearchComponent },
   { path: "hooks", component: HocksComponent },
+  {path:"rxjs",component:RxjsComponent},
   {
     path: "hook",
     component: HooksComponent,
@@ -116,6 +119,11 @@ const routes: Routes = [
     component: AddUserCanDeactiveComponent,
     canDeactivate: [UnsavedchangesGuard],
   },
+
+  { path: 'userdetails', component: UserdetailsComponent, resolve: {
+    data: ResolveGaurdGuard
+  }},
+
 
   { path: "**", component: PagenotfoundComponent },
 ];
