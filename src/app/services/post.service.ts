@@ -17,4 +17,5 @@ url='https://jsonplaceholder.typicode.com/posts'
   getPostById(id:number):Observable<any>{
     return this.http.get(this.url + '/'+id);
   }
+  
 }

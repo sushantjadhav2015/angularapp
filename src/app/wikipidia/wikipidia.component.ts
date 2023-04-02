@@ -16,7 +16,7 @@ export class WikipidiaComponent implements OnInit {
     this.wikiService.search(uname.value).subscribe((res:any) => {
       this.arrayData = res.query.search;
       console.log("data coming from server", res);
-      console.log(uname.value);
+      // console.log(uname.value);
       
     });
   }

@@ -39,7 +39,7 @@ export class HooksChildComponent
   // this decorater used for get data from parent
   @Input() parent_Data: string;
 
-  // this decorater is used for
+  // this decorater is used for afterViewInt and AfterViewChecked
   @ViewChild("childHooks", { static: false }) viewChild: ElementRef;
 
   subscription: Subscription;
@@ -63,6 +63,8 @@ export class HooksChildComponent
       `color: ${this.parent_Data}`
     );
   }
+
+
   ngAfterViewInit(): void {
     console.log("HooksComponent ngAfterViewInit called", this.viewChild);
     this.viewChild.nativeElement.setAttribute(
@@ -97,10 +99,11 @@ export class HooksChildComponent
       console.log("users from hooks component", res);
     });
 
-    // this.counter = setInterval(() => {
-    //   this.num = this.num + 1;
-    //   console.log(this.num);
-    // }, 1000);
+// // this code is used for example of distroyed hooks
+//     this.counter = setInterval(() => {
+//       this.num = this.num + 1;
+//       console.log(this.num);
+//     }, 1000);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

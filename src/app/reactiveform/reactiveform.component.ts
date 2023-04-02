@@ -82,7 +82,7 @@ export class ReactiveformComponent implements OnInit {
   }
 
 
-  // custom validator using erroes code
+  // custom validator using errors code
   NaNames(control: FormControl) {
     if (this.notAllowedNames.indexOf(control.value) !== -1) {
       return { namesNotAllowed: true };
