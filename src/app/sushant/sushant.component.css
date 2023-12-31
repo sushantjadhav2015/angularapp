@@ -1,0 +1,20 @@
+.one {
+  display: flex;
+}
+
+.two {
+  margin: auto;
+}
+
+/* body{
+  height: 100%;
+  margin: 0;
+} */
+
+div{
+  position: relative;
+  top: 50%;
+  width: 50%;
+  margin:0 auto;
+  text-align: center;
+}

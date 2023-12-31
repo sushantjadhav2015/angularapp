@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
     // http:localhost4200/product
-    if (localStorage.getItem("username") != null) {
+    if (sessionStorage.getItem("username") != null) {
       return true;
     } else {
       this.routes.navigate(["/login"]);

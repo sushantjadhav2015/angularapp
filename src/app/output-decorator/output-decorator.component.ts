@@ -8,6 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 export class OutputDecoratorComponent implements OnInit {
   @Output() fromOut: EventEmitter<string> = new EventEmitter<string>();
   name: string = "sushant jadhav";
+  
   @Output() showingDetails: EventEmitter<string> = new EventEmitter<string>();
   emp = {
     name: 'Sushant jadhav',

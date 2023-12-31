@@ -1,0 +1,49 @@
+<p>interview works!</p>
+
+<div>
+  <ol *ngFor="let item of array">
+    <li>ID : {{item.id}}</li>
+    <li>Title : {{item.title}}</li>
+  </ol>
+</div>
+
+<hr>
+
+<div>
+  <table>
+    <thead>
+      <th>Sr No.</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Location</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of dataArray; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+        <td>{{item.location}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<hr>
+
+<!-- Tempalete driven form -->
+<p>{{title1}}</p>
+<div>
+    <form #loginForm="ngForm">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" placeholder="Name" name="name" ngModel>
+        </div>
+        <div>
+            <label for="pass">Password</label>
+            <input type="text" placeholder="Password" name="password" ngModel>
+        </div> 
+        <button (click)="login(loginForm)">Login</button>   
+    </form>
+</div>
+
+<hr>

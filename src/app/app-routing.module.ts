@@ -42,6 +42,8 @@ import { UnsavedchangesGuard } from "./unsavedchanges.guard";
 import { DemopostdetailsComponent } from "./demouserdetails/demopostdetails/demopostdetails.component";
 import { ResolveGaurdGuard } from "./resolve-gaurd.guard";
 import { RxjsComponent } from "./rxjs/rxjs.component";
+import { TemplateInterComponent } from "./template-inter/template-inter.component";
+import { ListComponent } from "./template-inter/list/list.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
@@ -107,7 +109,7 @@ const routes: Routes = [
   { path: "wikipidia", component: WikipidiaComponent },
   { path: "wikiSearch", component: WikiSearchComponent },
   { path: "hooks", component: HocksComponent },
-  {path:"rxjs",component:RxjsComponent},
+  { path: "rxjs", component: RxjsComponent },
   {
     path: "hook",
     component: HooksComponent,
@@ -120,10 +122,18 @@ const routes: Routes = [
     canDeactivate: [UnsavedchangesGuard],
   },
 
-  { path: 'userdetails', component: UserdetailsComponent, resolve: {
-    data: ResolveGaurdGuard
-  }},
-
+  {
+    path: "userdetails",
+    component: UserdetailsComponent,
+    resolve: {
+      data: ResolveGaurdGuard,
+    },
+  },
+  {
+    path: "temp-interview",
+    component: TemplateInterComponent,
+  },
+  { path: "list", component: ListComponent },
 
   { path: "**", component: PagenotfoundComponent },
 ];

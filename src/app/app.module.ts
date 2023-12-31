@@ -48,7 +48,6 @@ import { UserModule } from "./user/user.module";
 import { ReactiveformComponent } from "./reactiveform/reactiveform.component";
 import { TemplateAssignComponent } from "./template-assign/template-assign.component";
 import { MatModule } from "./appModules/mat.module";
-import { PracticeComponent } from "./practice/practice.component";
 import { CalculatorComponent } from "./calculator/calculator.component";
 import { AngularCalcuComponent } from "./angular-calcu/angular-calcu.component";
 import { AssiRecativeComponent } from "./assi-recative/assi-recative.component";
@@ -99,11 +98,19 @@ import { HocksComponent } from "./hocks/hocks.component";
 import { WikiSearchComponent } from "./wiki-search/wiki-search.component";
 import { PageListComponent } from "./wiki-search/page-list/page-list.component";
 import { SearchBarComponent } from "./wiki-search/search-bar/search-bar.component";
-import { HooksComponent } from './hooks/hooks.component';
-import { HooksChildComponent } from './hooks/hooks-child/hooks-child.component';
+import { HooksComponent } from "./hooks/hooks.component";
+import { HooksChildComponent } from "./hooks/hooks-child/hooks-child.component";
 import { DemopostdetailsComponent } from "./demouserdetails/demopostdetails/demopostdetails.component";
 import { AddUserCanDeactiveComponent } from "./add-user-can-deactive/add-user-can-deactive.component";
-import { RxjsComponent } from './rxjs/rxjs.component';
+import { RxjsComponent } from "./rxjs/rxjs.component";
+import { SushantComponent } from "./sushant/sushant.component";
+import { InterviewComponent } from './interview/interview.component';
+import { TemplateInterComponent } from './template-inter/template-inter.component';
+import { ListComponent } from './template-inter/list/list.component';
+import { ChartComponent } from './chart/chart.component';
+import { InnoTaskComponent } from './inno-task/inno-task.component';
+import { NotificationComponent } from './notification/notification.component';
+
 
 @NgModule({
   declarations: [
@@ -124,7 +131,6 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     TemplateformComponent,
     ReactiveformComponent,
     TemplateAssignComponent,
-    PracticeComponent,
     CalculatorComponent,
     AngularCalcuComponent,
     AssiRecativeComponent,
@@ -171,7 +177,14 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     HooksComponent,
     HooksChildComponent,
     AddUserCanDeactiveComponent,
-    RxjsComponent
+    RxjsComponent,
+    SushantComponent,
+    InterviewComponent,
+    TemplateInterComponent,
+    ListComponent,
+    ChartComponent,
+    InnoTaskComponent,
+    NotificationComponent,
   ],
   imports: [
     UserModule,

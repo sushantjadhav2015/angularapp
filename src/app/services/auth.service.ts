@@ -8,7 +8,7 @@ export class AuthService {
 
   checkuser(username, password) {
     if (username == "codemind" && password == "codemind123") {
-      localStorage.setItem("username", "codemind");
+      sessionStorage.setItem("username", "codemind");
       return true;
     } else {
       return false;

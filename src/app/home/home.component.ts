@@ -1,4 +1,3 @@
-import { getTreeNoValidDataSourceError } from "@angular/cdk/tree";
 import { Component, OnInit } from "@angular/core";
 import { from, of } from "rxjs";
 import { FirebaseService } from "../services/firebase.service";
@@ -15,19 +14,16 @@ export class HomeComponent implements OnInit {
   arrayApi = [];
   data;
   ngOnInit() {
-
-// *following 2 examples are for refrance of pipe oprator  which is used to connect multiple opratoers
+    // *following 2 examples are for refrance of pipe oprator  which is used to connect multiple opratoers
     //TODO 1) emit(1,2,3,4,5)
     // // create custom obsarable by using from method of RxJs
     // const source = from([1, 2, 3, 4, 5]);
-
     // // i want to filter out non even numbers
     // // pipe is used to conenct or call multipal obsarable oprators
     // const example = source.pipe(filter((num) => num % 2 === 0));
     // example.subscribe((res) => {
     //   console.log(`Even number : ${res}`);
     // });
-
     //TODO 2) another way to get data as like 1,2,3,4, o/p 2,3,4,
     // // we can create obsarable by using of method
     // const obs = of(1, 2, 3)
@@ -68,8 +64,7 @@ export class HomeComponent implements OnInit {
       )
       .subscribe((res) => {
         console.log(`After manipulate data`, res);
-        this.arrayApi=res
+        this.arrayApi = res;
       });
   }
-
 }
